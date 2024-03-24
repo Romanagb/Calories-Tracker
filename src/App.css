@@ -1,38 +1,47 @@
 .App {
+  background-color: #f0f0f0; /* Light grey background */
+  font-family: 'Roboto', sans-serif;
+  color: #333; /* Dark grey color for text */
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding: 20px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #ffffff; /* White background for the header */
+  padding: 20px;
+  margin-bottom: 30px; /* Adds space between the header and form */
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around header */
 }
 
-.App-link {
-  color: #61dafb;
+/* Style the form and report components */
+form {
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px;
+  margin: auto;
+  max-width: 500px; /* Set a max-width for the form */
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around form */
+  display: grid;
+  grid-gap: 15px; /* Space between form fields */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style for Material-UI TextField and Select components */
+.MuiTextField-root, .MuiFormControl-root {
+  width: 100%; /* Full width */
+}
+
+/* Style for the button */
+.MuiButton-root {
+  margin-top: 15px; /* Space above the button */
+}
+
+/* List styles for the report */
+.MuiList-root {
+  background-color: #ffffff; /* White background for the list */
+  padding: 20px;
+  margin: auto;
+  max-width: 500px; /* Set a max-width for the list */
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around list */
 }
