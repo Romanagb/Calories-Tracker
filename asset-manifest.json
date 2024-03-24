@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Romanagb/Calories-Tracker/static/css/main.d1a118f5.css",
-    "main.js": "/Romanagb/Calories-Tracker/static/js/main.3a0f68c4.js",
-    "static/js/453.79ef8a5e.chunk.js": "/Romanagb/Calories-Tracker/static/js/453.79ef8a5e.chunk.js",
-    "index.html": "/Romanagb/Calories-Tracker/index.html",
-    "main.d1a118f5.css.map": "/Romanagb/Calories-Tracker/static/css/main.d1a118f5.css.map",
-    "main.3a0f68c4.js.map": "/Romanagb/Calories-Tracker/static/js/main.3a0f68c4.js.map",
-    "453.79ef8a5e.chunk.js.map": "/Romanagb/Calories-Tracker/static/js/453.79ef8a5e.chunk.js.map"
+    "main.css": "/Calories-Tracker/static/css/main.d1a118f5.css",
+    "main.js": "/Calories-Tracker/static/js/main.47b4c885.js",
+    "static/js/453.79ef8a5e.chunk.js": "/Calories-Tracker/static/js/453.79ef8a5e.chunk.js",
+    "index.html": "/Calories-Tracker/index.html",
+    "main.d1a118f5.css.map": "/Calories-Tracker/static/css/main.d1a118f5.css.map",
+    "main.47b4c885.js.map": "/Calories-Tracker/static/js/main.47b4c885.js.map",
+    "453.79ef8a5e.chunk.js.map": "/Calories-Tracker/static/js/453.79ef8a5e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d1a118f5.css",
-    "static/js/main.3a0f68c4.js"
+    "static/js/main.47b4c885.js"
   ]
 }
