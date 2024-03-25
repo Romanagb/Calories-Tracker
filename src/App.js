@@ -9,31 +9,32 @@ import CustomException from "./custom_exceptions";
 function App() {
   //Stores the report entries
   const [reportData, setReportData] = useState([]);
-  //Stores the db instance
+  //Stores the DbInstance object holding the db
   const [db, setDb] = useState(null);
 
 
-  // Initialize our db
+  //Initialize our db
   useEffect(() => {
     async function initializeDB() {
       try {
         const dbInstance = await window.idb.openCaloriesDB(`caloriesdb`, 1);
         setDb(dbInstance);
       } catch (error) {
-        //console.error(`Database initialization failed:`, error);
-        throw new CustomException('Failed to initialize database', error);
+        //Throw Custom exception on failure
+        throw new CustomException(`Failed to initialize database`, error);
       }
     }
 
     initializeDB().catch(error => {
       if (error instanceof CustomException) {
-        console.error('Custom Exception caught:', error.message, error.details);
-        // Handle the custom exception here as required
+        //Log the Custom exception as required
+        console.error(`Custom Exception caught:`, error.message, error.details);
       } else {
-        console.error('Unhandled exception:', error);
+        //Just in case it's a different exception
+        console.error(`Unhandled exception:`, error);
       }
     });
-  }, []); // Empty dependency array to ensure this runs only once
+  }, []); //Empty dependency array to ensure this runs only once
 
 
 
@@ -42,16 +43,16 @@ function App() {
     try {
       //Checks if the db is initialized properly
       if (!db) {
-        //throw new Error(`Database not initialized`);
-        throw new CustomException('Database not initialized', null);
+        //Throw Custom exception on non initialized db
+        throw new CustomException(`Database not initialized`, null);
       }
       //Wait for writing the calorie item to the db
       const result = await db.addCalories(formData);
       console.log(result);
     } catch (error) {
       //Enters upon Promise rejection
-      //console.error(`Failed to add data:`, error);
-      throw new CustomException('Failed to add data', error);
+      //Throw Custom exception on failure
+      throw new CustomException(`Failed to add data`, error);
     }
   };
 
@@ -60,18 +61,17 @@ function App() {
     try {
       //Checks if the db is initialized properly
       if (!db) {
-        //throw new Error(`Database not initialized`);
-        throw new CustomException('Database not initialized', null);
+        //Throw Custom exception on non initialized db
+        throw new CustomException(`Database not initialized`, null);
       }
       ////Wait for fetching the report data for the selected month and year
       const data = await db.getReport(month, year);
       //Update the report data UseState with the fetched data
       setReportData(data);
-      //return data;
     } catch (error) {
       //Enters upon Promise rejection
-      //console.error(`Failed to get report data:`, error);
-      throw new CustomException('Failed to get report data', error);
+      //Throw Custom exception on failure
+      throw new CustomException(`Failed to get report data`, error);
     }
   };
 

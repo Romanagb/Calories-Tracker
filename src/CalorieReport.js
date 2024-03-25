@@ -39,18 +39,13 @@ function CalorieReport({ getReportData, reportData }) {
       await getReportData(month, year);
     } catch (error){
       if (error instanceof CustomException){
-        console.error('Custom Exception caught:', error.message, error.details);
-        //Handle the custom exception here as required
+        //Log the Custom exception as required
+        console.error(`Custom Exception caught:`, error.message, error.details);
       } else {
-        //Handle other types of exceptions if needed
-        console.error('Unhandled exception:', error);
+        //Just in case it's a different exception
+        console.error(`Unhandled exception:`, error);
       }
-      //reportData([]);
     }
-    /*} catch (error) {
-      console.error(`Error fetching report data:`, error);
-      reportData([]);
-    }*/
   };
 
   return (
